@@ -16,6 +16,9 @@
 ### 1. 漏洞概述
 系统中的 `/appmonitor/protect/jndi/loadTree` 接口存在高危 JNDI 注入缺陷，可以通过传入恶意的 LDAP / RMI 地址实现远程代码执行或资源加载。
 
+### FOFA:
+    app="Apusic应用服务器"
+
 ### 2. 漏洞证明 (POC)
 漏洞通过 POST 请求触发，参数 `jndiName` 未经过过滤直接传入底层 JNDI Lookup 方法，可以通过 DNSLog 解析来确证漏洞存在：
 
